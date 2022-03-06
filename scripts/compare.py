@@ -58,8 +58,8 @@ def main():
             balance = i*j
             adjusted_balance = balance*10**18
             decimals = 10**ERC20Mock[0].decimals()
-            old = old_pool.get_dy(3,0, adjusted_balance)
-            new = MetaUSD[0].get_dy_underlying(0, 1, adjusted_balance)
+            old = old_pool.get_dy(3,1, adjusted_balance)
+            new = MetaUSD[0].get_dy_underlying(0, 2, adjusted_balance)
             print("{}, {:.6f}, {:.6f}, {:.3f}".format(balance, old/decimals, new/decimals, new/old))
     print("sUSD => USDT")
     for i in [10**x for x in range(3,8)]:
@@ -67,6 +67,6 @@ def main():
             balance = i*j
             adjusted_balance = balance*10**18
             decimals = 10**ERC20Mock[0].decimals()
-            old = old_pool.get_dy(3,0, adjusted_balance)
-            new = MetaUSD[0].get_dy_underlying(0, 1, adjusted_balance)
+            old = old_pool.get_dy(3,2, adjusted_balance)
+            new = MetaUSD[0].get_dy_underlying(0, 3, adjusted_balance)
             print("{}, {:.6f}, {:.6f}, {:.3f}".format(balance, old/decimals, new/decimals, new/old))
